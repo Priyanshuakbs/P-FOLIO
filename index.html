@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyanshu Bhati — Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Priyanshu Bhati — Aspiring Full-Stack Developer specializing in MERN Stack, React, Node.js, and Cybersecurity.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">PB.</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">&times;</button>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#resume">Resume</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-bg-glow g1"></div>
+  <div class="hero-bg-glow g2"></div>
+  <div class="container hero-content">
+    <div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
+    <h1>Hi, I'm <span class="gradient-text">Priyanshu</span><br>Bhati</h1>
+    <div class="typing-wrapper">
+      <span id="typing-text"></span><span class="cursor">|</span>
+    </div>
+    <p class="hero-desc">Aspiring Full-Stack Developer crafting scalable web applications with the MERN stack, and exploring Cybersecurity to build secure digital solutions.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">⚡ View Projects</a>
+      <a href="#contact" class="btn btn-outline">💬 Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><h3>12+</h3><p>Repositories</p></div>
+      <div class="hero-stat"><h3>5+</h3><p>Live Projects</p></div>
+      <div class="hero-stat"><h3>MERN</h3><p>Stack Developer</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">// About Me</p>
+      <h2 class="section-title">Turning Ideas Into Code</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-image-wrapper reveal">
+        <div class="about-image">👨‍💻</div>
+      </div>
+      <div class="about-text reveal">
+        <h3>A passionate developer from Roorkee, India</h3>
+        <p>I'm a B.Tech Computer Science student at Haridwar University, driven by a passion for building impactful web applications. With hands-on experience in the MERN stack, I specialize in creating full-stack solutions — from intuitive React frontends to robust Node.js backends powered by MongoDB.</p>
+        <p>Beyond web development, I'm actively exploring Cybersecurity — building tools like Packet Sniffers and Password Strength Checkers. I believe in writing clean, efficient code and continuously pushing my boundaries as a developer.</p>
+        <div class="about-info-grid">
+          <div class="about-info-item"><div class="label">Location</div><div class="value">Roorkee, Uttarakhand</div></div>
+          <div class="about-info-item"><div class="label">Education</div><div class="value">B.Tech CSE</div></div>
+          <div class="about-info-item"><div class="label">Focus</div><div class="value">MERN Stack</div></div>
+          <div class="about-info-item"><div class="label">Interest</div><div class="value">Cybersecurity</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">// Tech Stack</p>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">Technologies I work with to bring ideas to life</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-header"><div class="skill-icon">🎨</div><h3>Frontend</h3></div>
+        <div class="skill-list">
+          <div class="skill-item"><div class="skill-item-header"><span>React.js</span><span>85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>Next.js</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>HTML / CSS</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>JavaScript</span><span>80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-header"><div class="skill-icon">⚙️</div><h3>Backend & Database</h3></div>
+        <div class="skill-list">
+          <div class="skill-item"><div class="skill-item-header"><span>Node.js</span><span>80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>Express.js</span><span>75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>MongoDB</span><span>75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>REST APIs</span><span>80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div></div>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-header"><div class="skill-icon">🛡️</div><h3>Languages & Tools</h3></div>
+        <div class="skill-list">
+          <div class="skill-item"><div class="skill-item-header"><span>Java & DSA</span><span>75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>Python</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>Git & GitHub</span><span>85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
+          <div class="skill-item"><div class="skill-item-header"><span>Cybersecurity</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="60"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">// Portfolio</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A collection of projects that showcase my skills and passion</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-image">
+          <img src="assets/taskflow.png" alt="TaskFlow App">
+          <div class="project-overlay"></div>
+          <span class="project-number">01</span>
+        </div>
+        <div class="project-content">
+          <h3>TaskFlow — MERN App</h3>
+          <p>Full-stack task management application with authentication, CRUD operations, and real-time updates. Built with React frontend and Node.js/MongoDB backend.</p>
+          <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Priyanshuakbs/taskflow-frontend" target="_blank">↗ GitHub</a>
+            <a href="https://github.com/Priyanshuakbs/taskflow-mern" target="_blank">↗ Backend</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">
+          <img src="assets/devcollab.png" alt="Dev Collab Platform">
+          <div class="project-overlay"></div>
+          <span class="project-number">02</span>
+        </div>
+        <div class="project-content">
+          <h3>Dev Collab Platform</h3>
+          <p>A developer collaboration platform enabling teams to connect, share code, and work together on projects in real-time. ⭐ Starred by community.</p>
+          <div class="project-tags"><span>JavaScript</span><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Priyanshuakbs/dev-collab-platform" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">
+          <img src="assets/accredian.png" alt="Accredian Enterprise">
+          <div class="project-overlay"></div>
+          <span class="project-number">03</span>
+        </div>
+        <div class="project-content">
+          <h3>Accredian Enterprise</h3>
+          <p>Enterprise subscription platform with NextAuth authentication, Prisma ORM, subscription management, and payment integration. Deployed on Vercel.</p>
+          <div class="project-tags"><span>Next.js</span><span>Prisma</span><span>NextAuth</span><span>SQLite</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Priyanshuakbs/accredian-subscription-platform" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image">
+          <img src="assets/golfdraw.png" alt="Golf Charity Platform">
+          <div class="project-overlay"></div>
+          <span class="project-number">04</span>
+        </div>
+        <div class="project-content">
+          <h3>Golf Charity Platform</h3>
+          <p>A charity and event management platform for golf tournaments. Features event listings, donation tracking, and user registration.</p>
+          <div class="project-tags"><span>JavaScript</span><span>React</span><span>Node.js</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Priyanshuakbs/golf-charity-platform" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image" style="background:linear-gradient(135deg,#7f1d1d,#991b1b)">
+          <span style="font-size:4rem">🔐</span>
+          <div class="project-overlay"></div>
+          <span class="project-number">05</span>
+        </div>
+        <div class="project-content">
+          <h3>Cybersecurity Toolkit</h3>
+          <p>Python-based security tools including a multi-threaded Packet Sniffer for network analysis and a Password Strength Checker with entropy calculation.</p>
+          <div class="project-tags"><span>Python</span><span>Networking</span><span>Security</span><span>Sockets</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Priyanshuakbs/PACKET-SNIFFER" target="_blank">↗ Sniffer</a>
+            <a href="https://github.com/Priyanshuakbs/PASSWORD-CHECKER" target="_blank">↗ Checker</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-image" style="background:linear-gradient(135deg,#1e1e1e,#333)">
+          <span style="font-size:4rem">🎬</span>
+          <div class="project-overlay"></div>
+          <span class="project-number">06</span>
+        </div>
+        <div class="project-content">
+          <h3>Netflix Clone & TextUtils</h3>
+          <p>A pixel-perfect Netflix UI clone using vanilla HTML/CSS/JS, and a React text utility app with dark mode, word count, and routing.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Priyanshuakbs/netflix-clone-using-html-css-and-javascript" target="_blank">↗ Netflix</a>
+            <a href="https://github.com/Priyanshuakbs/textutils-react-app" target="_blank">↗ TextUtils</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">// Journey</p>
+      <h2 class="section-title">Experience & Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">June 2025 — Present</div>
+        <div class="timeline-card">
+          <h3>Full Stack Developer Intern</h3>
+          <h4>CertED Technologies</h4>
+          <p>Working on full-stack web applications using MERN stack. Building scalable solutions, implementing RESTful APIs, authentication systems, and database architecture.</p>
+          <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span></div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2023 — 2027 (Expected)</div>
+        <div class="timeline-card">
+          <h3>B.Tech in Computer Science & Engineering</h3>
+          <h4>Haridwar University, Uttarakhand</h4>
+          <p>Studying core CS fundamentals including Data Structures & Algorithms, OOP, DBMS, Computer Networks, and Software Engineering.</p>
+          <div class="tags"><span>DSA</span><span>Java</span><span>DBMS</span><span>Networks</span></div>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2021 — 2023</div>
+        <div class="timeline-card">
+          <h3>Senior Secondary (XII) — PCM</h3>
+          <h4>Roorkee, Uttarakhand</h4>
+          <p>Completed higher secondary education with Physics, Chemistry, and Mathematics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">// Resume</p>
+      <h2 class="section-title">My Resume</h2>
+      <p class="section-subtitle">Download or view my full resume below</p>
+    </div>
+    <div class="resume-wrapper reveal">
+      <div class="resume-card">
+        <div class="resume-preview">
+          <iframe src="assets/Priyanshu_resume.pdf" title="Resume"></iframe>
+        </div>
+        <div class="resume-actions">
+          <div class="resume-info">
+            <div class="resume-icon">📄</div>
+            <div>
+              <h3>Priyanshu Bhati</h3>
+              <p>Full-Stack Developer (MERN) &bull; B.Tech CSE</p>
+            </div>
+          </div>
+          <div class="resume-btns">
+            <a href="assets/Priyanshu_resume.pdf" download class="btn btn-primary">⬇ Download Resume</a>
+            <a href="assets/Priyanshu_resume.pdf" target="_blank" class="btn btn-outline">👁 View Full Screen</a>
+            <a href="editor.html" class="btn btn-outline" style="border-color:rgba(124,58,237,0.4);color:#7c3aed;">✏️ Edit Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">// Get In Touch</p>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Connect With Me</h3>
+        <p>I'm always excited to discuss new projects, creative ideas, or opportunities to be part of your vision.</p>
+        <div class="contact-links">
+          <a href="mailto:priyanshubhati2307@gmail.com" class="contact-link">
+            <div class="contact-link-icon">📧</div>
+            <div class="contact-link-text"><div class="label">Email</div><div class="value">priyanshubhati2307@gmail.com</div></div>
+          </a>
+          <a href="https://github.com/Priyanshuakbs" target="_blank" class="contact-link">
+            <div class="contact-link-icon">🐙</div>
+            <div class="contact-link-text"><div class="label">GitHub</div><div class="value">Priyanshuakbs</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/priyanshu-bhati2307/" target="_blank" class="contact-link">
+            <div class="contact-link-icon">💼</div>
+            <div class="contact-link-text"><div class="label">LinkedIn</div><div class="value">Priyanshu Bhati</div></div>
+          </a>
+          <div class="contact-link">
+            <div class="contact-link-icon">📍</div>
+            <div class="contact-link-text"><div class="label">Location</div><div class="value">Roorkee, Uttarakhand, India</div></div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+        <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+        <div class="form-group"><input type="text" placeholder="Subject"></div>
+        <div class="form-group"><textarea placeholder="Your Message" required></textarea></div>
+        <button type="submit" class="btn-submit">Send Message ✨</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>Designed & Built by Priyanshu Bhati with <span class="heart">❤️</span></p>
+    <div class="footer-links">
+      <a href="https://github.com/Priyanshuakbs" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/priyanshu-bhati2307/" target="_blank">LinkedIn</a>
+      <a href="mailto:priyanshubhati2307@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

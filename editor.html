@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Editor — Priyanshu Bhati</title>
+  <link rel="stylesheet" href="editor.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">📝 Resume Editor</span>
+    <a href="index.html" class="topbar-back">← Back to Portfolio</a>
+  </div>
+  <div class="topbar-actions">
+    <button class="btn-top btn-save" onclick="saveData()">💾 Save</button>
+    <button class="btn-top btn-pdf" onclick="downloadPDF()">📥 Download PDF</button>
+    <button class="btn-top btn-reset" onclick="resetData()">🗑 Reset</button>
+  </div>
+</div>
+<div class="save-toast" id="saveToast">✅ Saved successfully!</div>
+
+<!-- LAYOUT -->
+<div class="editor-layout">
+
+  <!-- LEFT: EDITOR FORM -->
+  <div class="editor-panel" id="editorPanel">
+
+    <!-- PERSONAL INFO -->
+    <div class="section-block">
+      <button class="section-toggle open" onclick="toggleSection(this)">
+        <span><span class="icon">👤</span> Personal Info</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body open" id="sec-personal">
+        <div class="form-row"><label>Full Name</label><input type="text" data-field="name" oninput="updatePreview()"></div>
+        <div class="form-row-inline">
+          <div class="form-row"><label>Phone</label><input type="text" data-field="phone" oninput="updatePreview()"></div>
+          <div class="form-row"><label>Email</label><input type="email" data-field="email" oninput="updatePreview()"></div>
+        </div>
+        <div class="form-row-inline">
+          <div class="form-row"><label>LinkedIn Username</label><input type="text" data-field="linkedin" oninput="updatePreview()"></div>
+          <div class="form-row"><label>GitHub Username</label><input type="text" data-field="github" oninput="updatePreview()"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT ME -->
+    <div class="section-block">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span><span class="icon">💡</span> About Me</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body" id="sec-about">
+        <div class="form-row"><label>Summary</label><textarea data-field="about" rows="4" oninput="updatePreview()"></textarea></div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section-block">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span><span class="icon">🎓</span> Education</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body" id="sec-education">
+        <div id="education-entries"></div>
+        <button class="add-entry-btn" onclick="addEducation()">+ Add Education</button>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section-block">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span><span class="icon">🛠</span> Technical Skills</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body" id="sec-skills">
+        <div id="skills-entries"></div>
+        <button class="add-entry-btn" onclick="addSkillCategory()">+ Add Category</button>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section-block">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span><span class="icon">💼</span> Experience</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body" id="sec-experience">
+        <div id="experience-entries"></div>
+        <button class="add-entry-btn" onclick="addExperience()">+ Add Experience</button>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-block">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span><span class="icon">🚀</span> Projects</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body" id="sec-projects">
+        <div id="project-entries"></div>
+        <button class="add-entry-btn" onclick="addProject()">+ Add Project</button>
+      </div>
+    </div>
+
+    <!-- SOFT SKILLS -->
+    <div class="section-block">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span><span class="icon">🤝</span> Soft Skills</span><span class="arrow">▼</span>
+      </button>
+      <div class="section-body" id="sec-softskills">
+        <div class="skills-input-row">
+          <input type="text" id="softSkillInput" placeholder="e.g. Leadership" onkeydown="if(event.key==='Enter'){addSoftSkill()}">
+          <button class="add-skill-btn" onclick="addSoftSkill()">+ Add</button>
+        </div>
+        <div class="skills-tags" id="softSkillsTags"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: LIVE PREVIEW -->
+  <div class="preview-panel">
+    <div class="resume-sheet" id="resumePreview"></div>
+  </div>
+
+</div>
+
+<script src="editor.js"></script>
+</body>
+</html>
