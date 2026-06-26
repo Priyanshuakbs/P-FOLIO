@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyanshu Bhati — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a2e;
+      --text-light: #555;
+      --text-muted: #888;
+      --accent: #0f766e;
+      --accent-light: #14b8a6;
+      --accent-bg: #f0fdfa;
+      --border: #e2e8f0;
+      --section-bg: #f8fafc;
+      --tag-bg: #e0f2fe;
+      --tag-text: #0369a1;
+    }
+
+    html {
+      font-size: 13px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    /* ===== DOWNLOAD BAR (hidden on print) ===== */
+    .download-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .download-bar p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .download-bar p span {
+      color: #14b8a6;
+      font-weight: 600;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 28px;
+      background: linear-gradient(135deg, #0f766e, #14b8a6);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(20,184,166,0.4);
+    }
+    .back-btn {
+      position: absolute;
+      left: 24px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.1);
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .back-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ===== RESUME PAGE ===== */
+    .resume-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 80px auto 40px;
+      background: var(--bg);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .resume-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .resume-header::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid rgba(20,184,166,0.6);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-info {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .header-info h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .header-info h1 span {
+      color: #14b8a6;
+    }
+    .header-info .subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+    .header-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .header-contacts a,
+    .header-contacts span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #cbd5e1;
+      font-size: 11px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .header-contacts a:hover { color: #14b8a6; }
+    .header-contacts .icon { font-size: 13px; }
+
+    /* ===== BODY LAYOUT ===== */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      min-height: calc(297mm - 170px);
+    }
+
+    .main-col {
+      padding: 28px 32px;
+    }
+    .side-col {
+      background: #f8fafc;
+      padding: 28px 24px;
+      border-left: 1px solid var(--border);
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-title .sec-icon {
+      font-size: 14px;
+    }
+
+    .section + .section {
+      margin-top: 22px;
+    }
+
+    /* ===== SUMMARY ===== */
+    .summary p {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== EXPERIENCE / EDUCATION ITEMS ===== */
+    .exp-item {
+      margin-bottom: 16px;
+    }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3px;
+    }
+    .exp-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .exp-date {
+      font-size: 10.5px;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+      background: var(--accent-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .exp-company {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .exp-desc {
+      font-size: 11.5px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .exp-desc ul {
+      padding-left: 16px;
+    }
+    .exp-desc li {
+      margin-bottom: 2px;
+    }
+
+    /* ===== PROJECT ITEMS ===== */
+    .proj-item {
+      margin-bottom: 14px;
+    }
+    .proj-item:last-child { margin-bottom: 0; }
+    .proj-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .proj-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .proj-title a:hover { color: var(--accent); }
+    .proj-tech {
+      font-size: 10px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .proj-desc {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ===== SIDEBAR: SKILLS ===== */
+    .skill-group {
+      margin-bottom: 16px;
+    }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .skill-tag {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 10px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-radius: 4px;
+      line-height: 1.4;
+    }
+
+    /* ===== SIDEBAR: LINKS ===== */
+    .link-list {
+      list-style: none;
+    }
+    .link-list li {
+      margin-bottom: 8px;
+    }
+    .link-list a {
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+    }
+    .link-list a:hover { color: #0f766e; }
+    .link-list .link-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* ===== SIDEBAR: CERTIFICATIONS ===== */
+    .cert-item {
+      margin-bottom: 10px;
+    }
+    .cert-item:last-child { margin-bottom: 0; }
+    .cert-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .cert-org {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ===== SIDEBAR: LANGUAGES ===== */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+    .lang-name { font-weight: 500; color: var(--text); }
+    .lang-level {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    .lang-bar {
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .lang-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 4px;
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      html { font-size: 12.5px; }
+      body { background: #fff; }
+      .download-bar { display: none !important; }
+      .resume-page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+      .resume-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .side-col {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .exp-date, .skill-tag {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- DOWNLOAD BAR -->
+<div class="download-bar">
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+  <p>📄 Resume of <span>Priyanshu Bhati</span></p>
+  <button class="download-btn" onclick="window.print()">⬇ Download as PDF</button>
+</div>
+
+<!-- RESUME PAGE -->
+<div class="resume-page">
+
+  <!-- HEADER -->
+  <header class="resume-header">
+    <img src="assets/profile-photo.jpg" alt="Priyanshu Bhati" class="profile-photo">
+    <div class="header-info">
+      <h1>Priyanshu <span>Bhati</span></h1>
+      <div class="subtitle">Full-Stack Developer (MERN) · Aspiring Cybersecurity Enthusiast</div>
+      <div class="header-contacts">
+        <a href="mailto:priyanshubhati2307@gmail.com">
+          <span class="icon">📧</span> priyanshubhati2307@gmail.com
+        </a>
+        <a href="https://github.com/Priyanshuakbs" target="_blank">
+          <span class="icon">🐙</span> github.com/Priyanshuakbs
+        </a>
+        <a href="https://www.linkedin.com/in/priyanshu-bhati2307/" target="_blank">
+          <span class="icon">💼</span> linkedin.com/in/priyanshu-bhati2307
+        </a>
+        <span>
+          <span class="icon">📍</span> Roorkee, Uttarakhand, India
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="resume-body">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- SUMMARY -->
+      <div class="section summary">
+        <div class="section-title"><span class="sec-icon">👤</span> Professional Summary</div>
+        <p>Aspiring Full-Stack Developer with hands-on experience in the MERN stack (MongoDB, Express.js, React.js, Node.js). Currently pursuing B.Tech in Computer Science at Haridwar University. Passionate about building scalable web applications with clean architecture, RESTful APIs, and modern frontend experiences. Additionally exploring Cybersecurity through practical tool development including packet sniffers and password strength analyzers.</p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">💼</span> Experience</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Full Stack Developer Intern</div>
+            <div class="exp-date">June 2025 — Present</div>
+          </div>
+          <div class="exp-company">CertED Technologies</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Developing full-stack web applications using React.js, Node.js, Express.js, and MongoDB</li>
+              <li>Building and integrating RESTful APIs with JWT-based authentication systems</li>
+              <li>Implementing responsive UI components and optimizing database queries for performance</li>
+              <li>Collaborating with cross-functional teams using Git/GitHub for version control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">🚀</span> Key Projects</div>
+
+        <div class="proj-item">
+          <div class="proj-title"><a href="https://github.com/Priyanshuakbs/taskflow-frontend" target="_blank">TaskFlow — Full-Stack Task Manager ↗</a></div>
+          <div class="proj-tech">React.js · Node.js · MongoDB · Express.js · JWT Auth</div>
+          <div class="proj-desc">End-to-end task management app with user authentication, CRUD operations, real-time updates, and a responsive React dashboard with REST API backend.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title"><a href="https://github.com/Priyanshuakbs/dev-collab-platform" target="_blank">Dev Collab Platform ↗</a></div>
+          <div class="proj-tech">JavaScript · React · Node.js · MongoDB</div>
+          <div class="proj-desc">Developer collaboration platform enabling teams to connect, share code, and manage projects. Starred by community for code quality and features.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title"><a href="https://github.com/Priyanshuakbs/accredian-subscription-platform" target="_blank">Accredian Enterprise Platform ↗</a></div>
+          <div class="proj-tech">Next.js · Prisma ORM · NextAuth.js · SQLite</div>
+          <div class="proj-desc">Enterprise subscription platform with NextAuth authentication, Prisma ORM for database management, subscription tiers, and payment integration.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-title"><a href="https://github.com/Priyanshuakbs/PACKET-SNIFFER" target="_blank">Cybersecurity Toolkit ↗</a></div>
+          <div class="proj-tech">Python · Socket Programming · Network Analysis</div>
+          <div class="proj-desc">Multi-threaded Packet Sniffer for live network traffic analysis and Password Strength Checker with entropy-based security evaluation.</div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">🎓</span> Education</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">B.Tech in Computer Science & Engineering</div>
+            <div class="exp-date">2023 — 2027</div>
+          </div>
+          <div class="exp-company">Haridwar University, Uttarakhand</div>
+          <div class="exp-desc">Core coursework: Data Structures & Algorithms, OOP, DBMS, Computer Networks, Software Engineering. Active in coding competitions and open-source development.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-title">Senior Secondary (XII) — PCM</div>
+            <div class="exp-date">2021 — 2023</div>
+          </div>
+          <div class="exp-company">Roorkee, Uttarakhand</div>
+          <div class="exp-desc">Physics, Chemistry, and Mathematics with strong academic performance.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="side-col">
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">⚡</span> Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">🎨 Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">⚙️ Backend & DB</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Prisma</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">🛠️ Languages & Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Postman</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">🛡️ Cybersecurity</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Network Analysis</span>
+            <span class="skill-tag">Packet Sniffing</span>
+            <span class="skill-tag">Socket Programming</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">🔗</span> Links</div>
+        <ul class="link-list">
+          <li>
+            <a href="https://github.com/Priyanshuakbs" target="_blank">
+              🐙 github.com/Priyanshuakbs
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/priyanshu-bhati2307/" target="_blank">
+              💼 linkedin.com/in/priyanshu-bhati2307
+            </a>
+          </li>
+          <li>
+            <a href="mailto:priyanshubhati2307@gmail.com">
+              📧 priyanshubhati2307@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- INTERESTS -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">🎯</span> Interests</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Full-Stack Dev</span>
+          <span class="skill-tag">Cybersecurity</span>
+          <span class="skill-tag">Open Source</span>
+          <span class="skill-tag">DSA</span>
+          <span class="skill-tag">System Design</span>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="section">
+        <div class="section-title"><span class="sec-icon">🌐</span> Languages</div>
+        <div class="lang-item">
+          <span class="lang-name">Hindi</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Professional</span>
+        </div>
+        <div class="lang-bar"><div class="lang-fill" style="width:85%"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
